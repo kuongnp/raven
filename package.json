@@ -1,0 +1,25 @@
+{
+  "name": "raven",
+  "version": "1.0.0",
+  "description": "hapjs project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuongnp/raven.git"
+  },
+  "keywords": [
+    "hapijs"
+  ],
+  "author": "knp",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuongnp/raven/issues"
+  },
+  "homepage": "https://github.com/kuongnp/raven#readme",
+  "dependencies": {
+    "@hapi/hapi": "^18.4.0"
+  }
+}
