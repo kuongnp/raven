@@ -8865,9 +8865,10 @@ $(document).ready(function() {
         return str;
     }
 }());
-
 (function () {
-    //$('#content').summernote({height:300});
+	
+	
+    $('#content').summernote({height:300});
 	
     var slug = function(str) {
         str = str.replace(/^\s+|\s+$/g, ''); // trim
@@ -8888,11 +8889,12 @@ $(document).ready(function() {
     }
     
 	$('.active_theme').change(function() {
-		var theme_id = $(this).val();
+		console.log($(this).prop('checked'));
+		var theme_title = $(this).val();
 		$.ajax({
 		  type: "POST",
-		  url: '/theme/active',
-		  data: {theme:theme_id},
+		  url: '/theme',
+		  data: {theme:theme_title},
 		  success: function() {
 		  	alert('New theme is set active!');
 		  }
@@ -8923,6 +8925,8 @@ $(document).ready(function() {
 		}
 		
 	})
+	
+	
 	//menu action
 	$('.del_menu').on('click', function() {
 		var cf = confirm('Are you sure?');
@@ -9043,6 +9047,7 @@ $(document).ready(function() {
 	//end menu action
 	
 	var PortletDraggable = function () {
+
 	    return {
 	        //main function to initiate the module
 	        init: function () {
@@ -9077,7 +9082,6 @@ $(document).ready(function() {
 	
 	
 }());
-
 var mQuickSidebar = function() {
     var topbarAside = $('#m_quick_sidebar');
     var topbarAsideTabs = $('#m_quick_sidebar_tabs');    

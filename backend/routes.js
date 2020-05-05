@@ -9,7 +9,6 @@ let Page      = require('./modules/page');
 let Widget      = require('./modules/widget');
 
 let staticServing = {
-      auth:false,
   	handler: {
   		directory: {
   			path: ['./backend/assets'],
@@ -20,7 +19,6 @@ let staticServing = {
   };
   
 let themeImg = {
-      auth:false,
       handler: {
             directory: {
   			path: ['./frontend'],
@@ -46,11 +44,7 @@ let routes = [
       { method: 'GET', path: '/', config: Dashboard.index},
       //theme
       { method: 'GET', path: '/theme', config: Theme.index},
-      { method: 'POST', path: '/theme', config: Theme.create},
-      { method: 'GET', path: '/theme/{id}', config: Theme.edit},
-      { method: 'POST', path: '/theme/{id}', config: Theme.update},
-      { method: 'POST', path: '/theme/active', config: Theme.active},
-      { method: 'GET', path: '/theme/new', config: Theme.new},
+      { method: 'POST', path: '/theme', config: Theme.setactive},
       //menu
       { method: 'GET', path: '/menu', config: Menu.index},
       { method: 'GET', path: '/menu/new', config: Menu.new},

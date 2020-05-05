@@ -5,10 +5,7 @@ const manifest = [
     {
         server: {
             port: Config.api.port,
-            host: Config.api.host,
-            router: {
-              stripTrailingSlash: true
-            }
+            host: Config.api.host
         },
         register: {
             plugins: [
@@ -51,13 +48,10 @@ const manifest = [
         register: {
             plugins: [
                 {
-                  plugin: require('hapi-auth-jwt2')
+                    plugin: 'inert'
                 },
                 {
-                    plugin: require('@hapi/inert')
-                },
-                {
-                    plugin: require('@hapi/vision')
+                    plugin: 'vision'
                 },
                 {
                     plugin: './backend/index'
@@ -87,18 +81,15 @@ const manifest = [
     {
         server: {
             port: Config.frontend.port,
-            host: Config.frontend.host,
-            router: {
-              stripTrailingSlash: true
-            }
+            host: Config.frontend.host
         },
         register: {
             plugins: [
                 {
-                    plugin: require('@hapi/inert')
+                    plugin: 'inert'
                 },
                 {
-                    plugin: require('@hapi/vision')
+                    plugin: 'vision'
                 },
                 {
                     plugin: './frontend/index'

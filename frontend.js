@@ -2,19 +2,11 @@
 
 const Config = require('./config.js');
 const Hapi = require('hapi');
-const BabelRegister = require('babel-register');
 
 
 const server = Hapi.server({
     port: Config.frontend.port,
-    host: Config.frontend.host,
-    router: {
-        stripTrailingSlash: true
-    },
-    relativeTo: __dirname,
-    preRegister: (server) => {
-        BabelRegister();
-    }
+    host: Config.frontend.host
 });
 
 const init = async () => {

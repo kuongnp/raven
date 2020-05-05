@@ -2,7 +2,6 @@
 
 let Menu      = require('./menu/controller.js');
 let Site      = require('./site/controller.js');
-let Theme      = require('./theme/controller.js');
 
 
 let routes = [
@@ -15,17 +14,7 @@ let routes = [
       { method: 'GET', path: '/menu/item/{id}', handler: Menu.get_item },
       { method: 'PUT', path: '/menu/item/{id}', handler: Menu.update_item },
       { method: 'DELETE', path: '/menu/item/{id}', handler: Menu.remove_item },
-      
-      //theme
-      { method: 'GET', path: '/theme', handler: Theme.list},
-      { method: 'GET', path: '/theme/{id}', handler: Theme.get},
-      { method: 'GET', path: '/theme/active', handler: Theme.get_active},
-      { method: 'POST', path: '/theme', handler: Theme.create},
-      { method: 'PUT', path: '/theme/{id}', handler: Theme.update},
-      { method: 'PUT', path: '/theme/active/{id}', handler: Theme.active},
-      { method: 'DELETE', path: '/theme/{id}', handler: Theme.remove},
-      
-      
+
       //setting
       { method: 'GET', path: '/site', handler: Site.get_site },
       { method: 'PUT', path: '/site', handler: Site.update_site },

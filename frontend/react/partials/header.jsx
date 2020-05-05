@@ -9,9 +9,7 @@ const Header = ({site}) => (
     	<h1>{site.title}</h1>
         <p>{site.tagline}</p>
         <ul class="vs-nav">
-        <li><a href="/about">About</a></li>
-        <li><a href="/contact">Contact</a></li>
-            {/*site.main_menu.map((item,i)=> (<li><a href="{item.link}">{item.name}</a></li>))*/}
+            {site.main_menu.map((item,i)=> (<li><a href="{item.link}">{item.name}</a></li>))}
         </ul>
 
         
@@ -20,14 +18,8 @@ const Header = ({site}) => (
     </header>
 )
 
-/*const mapStateToProps =  async (state) => {
-    
-    
-}*/
-
-const mapStateToProps = (state) => ({
-      site:  state.site
-    }  
-)
+const mapStateToProps = state => ({
+  site: state.site
+})
 
 export default connect(mapStateToProps)(Header)

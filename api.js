@@ -6,10 +6,7 @@ const Hapi = require('hapi');
 
 const server = Hapi.server({
     port: Config.api.port,
-    host: Config.api.host,
-    router: {
-        stripTrailingSlash: true
-    }
+    host: Config.api.host
 });
 
 const init = async () => {

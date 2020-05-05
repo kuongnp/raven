@@ -26,18 +26,18 @@ exports.fetchapi = async function(uri,type,data={}) {
     }
 }
 
-exports.active_theme = function() {
+exports.get_site = function() {
     let api_url = 'http://'+config.api.host+':'+config.api.port;
-    let uri = api_url+'/theme/active';
+    let uri = api_url+'/site';
     let result =  this.fetchapi(uri,'get');
     return result;
 }
 
-/*exports.get_nav =  function(nav_key) {
+exports.get_nav =  function(nav_key) {
     let api_url = 'http://'+config.api.host+':'+config.api.port;
     let uri = api_url+'/site/nav/'+nav_key;
     let result =  this.fetchapi(uri,'get');
     return result;
-}*/
+}
 
 

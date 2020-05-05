@@ -10,7 +10,7 @@ exports.index = {
      //return 'Welcome Backend Raven.vn';
     let data = {
         title: 'Raven',
-    	  message: 'Hello world, i\'m Jakelong new'
+    	  message: 'Hello world, i\'m Jakelong new',
     }; 
     
     
