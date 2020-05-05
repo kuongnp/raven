@@ -1,0 +1,206 @@
+{{!< layout/default}}
+{{! The tag above means - insert everything within this file into the {content} of the default.html template }}
+
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+	<!-- BEGIN: Subheader -->
+	<div class="m-subheader ">
+		<div class="d-flex align-items-center">
+			{{> breadcrumb}}
+		</div>
+	</div>
+	<!-- END: Subheader -->
+	<div class="m-content">
+		<div class="row">
+			<div class="col-md">
+			    <!--begin::Form-->
+				<form action="/site" method="post" class="m-form m-form--fit m-form--label-align-right" autocomplete="off">
+    			    <div class="m-portlet m-portlet--tab">
+    					<div class="m-portlet__body">
+							<div class="form-group m-form__group">
+								<label for="title">
+									URL
+								</label>
+								<input type="text" class="form-control m-input" id="url" value="{{site.url}}" name="url" placeholder="URL">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Title
+								</label>
+								<input type="text" class="form-control m-input" id="title" value="{{site.title}}"  name="title" placeholder="Title" >
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Tagline
+								</label>
+								<input type="text" class="form-control m-input" id="tagline" value="{{site.tagline}}" name="tagline" placeholder="Tagline">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Description
+								</label>
+								<input type="text" class="form-control m-input" id="description" value="{{site.description}}" name="description" placeholder="Description">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Copyright
+								</label>
+								<input type="text" class="form-control m-input" id="copyright" value="{{site.copyright}}" name="copyright" placeholder="Copyright">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Logo
+								</label>
+								<input type="text" class="form-control m-input" id="logo" value="{{site.logo}}" name="logo" placeholder="Logo">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Icon
+								</label>
+								<input type="text" class="form-control m-input" id="icon" value="{{site.icon}}" name="icon" placeholder="Icon">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Cover Image
+								</label>
+								<input type="text" class="form-control m-input" id="cover_image" value="{{site.cover_image}}" name="cover_image" placeholder="Cover Image">
+							</div>
+							
+							<div class="form-group m-form__group">
+								<label for="title">
+									Timezone
+								</label>
+								<input type="text" class="form-control m-input" id="timezone" value="{{site.timezone}}" name="timezone" placeholder="Timezone">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Language
+								</label>
+								<input type="text" class="form-control m-input" id="language" value="{{site.language}}" name="language" placeholder="Language">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Theme navigations
+								</label>
+								<ul class="m-nav">
+									{{#each site.nav}}
+										<li id="nav_{{this._id}}" class="m-nav__item">{{this.title}}</li>
+										<select name="nav[{{this._id}}]">
+											<option value="{{this.title}}">None</option>
+										  {{#each ../menus}}
+										  	<option value="{{../this.title}}:{{this._id}}" {{#if_eq ../this.menu._id this._id }} selected {{/if_eq}} >{{this.name}}</option>
+										  {{/each}}
+										</select>
+									{{/each}}
+								</ul>
+							</div>
+							<div class="form-group m-form__group">
+								<h3 for="title">
+									Contact Info
+								</h3>
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Contact Name
+								</label>
+								<input type="text" class="form-control m-input" id="name" value="{{site.contact.name}}" name="name" placeholder="Contact Name">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Address
+								</label>
+								<input type="text" class="form-control m-input" id="address" value="{{site.contact.address}}" name="address" placeholder="Address">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Email
+								</label>
+								<input type="text" class="form-control m-input" id="email" value="{{site.contact.email}}" name="email" placeholder="Email">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="title">
+									Phone Number
+								</label>
+								<input type="text" class="form-control m-input" id="phone" value="{{site.contact.phone_number}}" name="phone_number" placeholder="Phone Number">
+							</div>
+							<div class="form-group m-form__group" style="padding-bottom:0px">
+								<label for="title">
+									Google Map
+								</label>
+							</div>
+							<div class="form-group m-form__group row" style="padding-top:0px">
+								<div class="col-lg-2">
+									<input type="text" class="form-control m-input" id="latitude" value="{{site.contact.gmap.latitude}}" name="latitude" placeholder="Gmap latitude">
+								</div>
+								<div class="col-lg-2">
+									<input type="text" class="form-control m-input" id="longitude" value="{{site.contact.gmap.longitude}}" name="longitude" placeholder="Gmap longitude">
+								</div>
+							</div>
+							<div class="form-group m-form__group">
+								<div class="m-portlet__head">
+									<div class="m-portlet__head-caption">
+		    							<div class="m-portlet__head-title">
+		    								<span class="m-portlet__head-icon">
+		    									<i class="la la-gear"></i>
+		    								</span>
+		    								<h3 class="m-portlet__head-text">
+		    									Social Info
+		    								</h3>
+		    							</div>
+		    						</div>
+		    						<div class="m-portlet__head-tools">
+										<ul class="m-portlet__nav">
+											<li class="m-portlet__nav-item">
+												<button type="button" class="btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill" id="add_contact_social">
+													<i class="la la-plus"></i>
+												</button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="m-portlet__body" id="list_contact_social">
+									{{#each site.contact.social}}
+	    							<div class="form-group m-form__group row">
+		    							<div>
+											<button type="button" class="btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill drag_item">
+												<i class="la la-arrows"></i>
+											</button>
+										</div>
+		    							<div class="col-lg-2">
+											<input type="text" class="form-control m-input" value="{{this.item_name}}" name="social_item_name" placeholder="Item name">
+										</div>
+		    							<div class="col-lg-2">
+											<input type="text" class="form-control m-input" value="{{this.item_value}}" name="social_item_value" placeholder="Item value">
+										</div>
+										<div class="col-lg-2">
+											<input type="text" class="form-control m-input" value="{{this.item_class}}" name="social_item_class" placeholder="Item class">
+										</div>
+										<div class="col-lg-2">
+											<button type="button" class="btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill remove_item">
+												<i class="la la-remove"></i>
+											</button>
+										</div>
+	    							</div>
+	    							{{/each}}
+	    						</div>
+							</div>
+							
+						</div>
+    					<div class="m-portlet__foot m-portlet__foot--fit">
+    						<div class="m-form__actions">
+    							<button type="submit" class="btn btn-primary">
+    								Save
+    							</button>
+    							<a href="/site">
+	    							<button type="button" class="btn btn-secondary">
+	    								Cancel
+	    							</button>
+    							</a>
+    						</div>
+    					</div>
+    				</div>
+    			</form>
+    			<!--end::Form-->
+			</div>
+		</div>
+	</div>
+</div>

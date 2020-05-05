@@ -1,0 +1,189 @@
+{{!< layout/default}}
+{{! The tag above means - insert everything within this file into the {content} of the default.html template }}
+
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+	<!-- BEGIN: Subheader -->
+	<div class="m-subheader ">
+		<div class="d-flex align-items-center">
+			{{> breadcrumb}}
+		</div>
+	</div>
+	<!-- END: Subheader -->
+	<div class="m-content">
+		<div class="row">
+			<div class="col-md">
+			    <!--begin::Form-->
+				<form action="/theme/{{theme._id}}" method="post" method="post" class="m-form m-form--fit m-form--label-align-right" autocomplete="off">
+    			    <div class="m-portlet m-portlet--tab">
+    					<div class="m-portlet__body">
+							<div class="form-group m-form__group">
+								<label for="title">
+									Title
+								</label>
+								<input type="text" class="form-control m-input" id="title" value="{{theme.title}}" name="title" placeholder="Title" required>
+							</div>
+							<div class="form-group m-form__group">
+								<label for="key">
+									Key
+								</label>
+								<input type="text" class="form-control m-input" id="key" value="{{theme.key}}"  name="key" placeholder="Key" required>
+							</div>
+							<div class="form-group m-form__group">
+								<label for="description">
+									Description
+								</label>
+								<input type="text" class="form-control m-input" id="description" value="{{theme.description}}" name="description" placeholder="Description">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="author">
+									Author
+								</label>
+								<input type="text" class="form-control m-input" id="author" value="{{theme.author}}"  name="author" placeholder="Author">
+							</div>
+							<div class="form-group m-form__group">
+								<h3 for="title">
+									Setting
+								</h3>
+							</div>
+							<div class="form-group m-form__group">
+								<label for="setting_url">
+									URL
+								</label>
+								<input type="text" class="form-control m-input" id="setting_url" value="{{theme.setting.url}}" name="setting_url" placeholder="URL">
+							</div>
+							
+							<div class="form-group m-form__group">
+								<label for="setting_title">
+									Title
+								</label>
+								<input type="text" class="form-control m-input" id="setting_title" value="{{theme.setting.title}}" name="setting_title" placeholder="Title">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="setting_tagline">
+									Tagline
+								</label>
+								<input type="text" class="form-control m-input" id="setting_tagline" value="{{theme.setting.tagline}}"  name="setting_tagline" placeholder="Tagline">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="setting_description">
+									Description
+								</label>
+								<input type="text" class="form-control m-input" id="setting_description" value="{{theme.setting.description}}" name="setting_description" placeholder="Description">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="setting_copyright">
+									Copyright
+								</label>
+								<input type="text" class="form-control m-input" id="setting_copyright" value="{{theme.setting.copyright}}" name="setting_copyright" placeholder="Copyright">
+							</div>
+							<div class="form-group m-form__group">
+								<h3 for="title">
+									Contact info
+								</h3>
+							</div>
+							<div class="form-group m-form__group">
+								<label for="contact_name">
+									Contact Name
+								</label>
+								<input type="text" class="form-control m-input" id="contact_name" value="{{theme.setting.contact.name}}"  name="contact_name" placeholder="Contact Name">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="contact_address">
+									Address
+								</label>
+								<input type="text" class="form-control m-input" id="contact_address" value="{{theme.setting.contact.address}}" name="contact_address" placeholder="Address">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="contact_email">
+									Email
+								</label>
+								<input type="text" class="form-control m-input" id="contact_email" value="{{theme.setting.contact.email}}" name="contact_email" placeholder="Email">
+							</div>
+							<div class="form-group m-form__group">
+								<label for="contact_phone">
+									Phone Number
+								</label>
+								<input type="text" class="form-control m-input" id="contact_phone" value="{{theme.setting.contact.phone}}"   name="contact_phone" placeholder="Phone Number">
+							</div>
+							<div class="form-group m-form__group" style="padding-bottom:0px">
+								<label for="title">
+									Google Map
+								</label>
+							</div>
+							<div class="form-group m-form__group row" style="padding-top:0px">
+								<div class="col-lg-2">
+									<input type="text" class="form-control m-input" id="gmap_api_key" value="{{theme.setting.contact.gmap.api_key}}"  name="gmap_api_key" placeholder="Gmap api key">
+								</div>
+								<div class="col-lg-2">
+									<input type="text" class="form-control m-input" id="gmap_iframe" value="{{theme.setting.contact.gmap.iframe}}" name="gmap_iframe" placeholder="Gmap frame">
+								</div>
+							</div>
+							<div class="form-group m-form__group">
+								<div class="m-portlet__head">
+									<div class="m-portlet__head-caption">
+		    							<div class="m-portlet__head-title">
+		    								<span class="m-portlet__head-icon">
+		    									<i class="la la-gear"></i>
+		    								</span>
+		    								<h3 class="m-portlet__head-text">
+		    									Social Info
+		    								</h3>
+		    							</div>
+		    						</div>
+		    						<div class="m-portlet__head-tools">
+										<ul class="m-portlet__nav">
+											<li class="m-portlet__nav-item">
+												<button type="button" class="btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill" id="add_contact_social">
+													<i class="la la-plus"></i>
+												</button>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<div class="m-portlet__body" id="list_contact_social">
+									{{#each theme.setting.contact.social}}
+	    							<div class="form-group m-form__group row">
+		    							<div>
+											<button type="button" class="btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill drag_item">
+												<i class="la la-arrows"></i>
+											</button>
+										</div>
+		    							<div class="col-lg-2">
+											<input type="text" class="form-control m-input" value="{{this.item_name}}" name="social_item_name" placeholder="Item name">
+										</div>
+		    							<div class="col-lg-2">
+											<input type="text" class="form-control m-input" value="{{this.item_value}}"  name="social_item_value" placeholder="Item value">
+										</div>
+										<div class="col-lg-2">
+											<input type="text" class="form-control m-input" value="{{this.item_class}}"  name="social_item_class" placeholder="Item class">
+										</div>
+										<div class="col-lg-2">
+											<button type="button" class="btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill remove_item">
+												<i class="la la-remove"></i>
+											</button>
+										</div>
+	    							</div>
+	    							{{/each}}
+	    						</div>
+							</div>
+							
+						</div>
+    					<div class="m-portlet__foot m-portlet__foot--fit">
+    						<div class="m-form__actions">
+    							<button type="submit" class="btn btn-primary">
+    								Save
+    							</button>
+    							<a href="/theme">
+	    							<button type="button" class="btn btn-secondary">
+	    								Cancel
+	    							</button>
+    							</a>
+    						</div>
+    					</div>
+    				</div>
+    			</form>
+    			<!--end::Form-->
+			</div>
+		</div>
+	</div>
+</div>

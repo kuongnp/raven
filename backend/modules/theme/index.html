@@ -1,0 +1,56 @@
+{{!< layout/default}}
+{{! The tag above means - insert everything within this file into the {content} of the default.html template }}
+
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+	<!-- BEGIN: Subheader -->
+	<div class="m-subheader ">
+		<div class="d-flex align-items-center">
+			{{> breadcrumb}}
+		</div>
+	</div>
+	<!-- END: Subheader -->
+	<div class="m-content">
+		<div class="row">
+		{{#each themes}}
+            <div class="col-lg-4">
+				<!--begin::Portlet-->
+				<div class="m-portlet m-portlet--mobile">
+					<div class="m-portlet__head">
+						<div class="m-portlet__head-caption">
+							<div class="m-portlet__head-title">
+								<h3 class="m-portlet__head-text">
+									{{this.title}}
+									<small>
+										{{this.description}}
+									</small>
+								</h3>
+							</div>
+						</div>
+						<div class="m-portlet__head-tools">
+							<ul class="m-portlet__nav">
+								<li class="m-portlet__nav-item">
+									<a href="/theme/{{this._id}}/" class="btn btn-brand btn-xs  m-btn--icon m-btn--icon-only  m-btn--pill">
+										<i class="la la-cog"></i>
+									</a>
+								</li>
+								<li class="m-portlet__nav-item">
+									<span class="btn m-btn--icon m-btn--icon-only m-switch m-switch--icon">
+										<label>
+											<input type="radio" name="theme" {{#this.active}}checked{{/this.active}} class="active_theme" value="{{this._id}}">
+											<span></span>
+										</label>
+									</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="m-portlet__body">
+						<img src="/theme/{{this.key}}/image.png" width="100%">
+					</div>
+				</div>
+				<!--end::Portlet-->
+			</div>
+        {{/each}}
+		</div>
+	</div>
+</div>

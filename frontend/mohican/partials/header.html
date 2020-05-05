@@ -1,0 +1,108 @@
+<header>
+            <!-- Header Top Start -->
+            <div class="header-top">
+                <div class="container">
+                    <div class="row">
+                        <!-- Header Top left Start -->                        
+                        <div class="col-lg-4 col-md-12 d-center">
+                            <div class="header-top-left">
+                                <img src="img/icon/call.png" alt="">Call Us : {{site.contact.phone_number}}
+                            </div>                        
+                        </div>
+                        <!-- Header Top left End -->
+                        <!-- Search Box Start -->                                        
+                        <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+                            <div class="search-box-view">
+                                <form action="#">
+                                    <input type="text" class="email" placeholder="Tìm kiếm sản phẩm" name="product">
+                                    <button type="submit" class="submit"></button>
+                                </form>
+                            </div>                                           
+                        </div>
+                        <!-- Search Box End --> 
+                        <!-- Header Top Right Start -->                                       
+                        <div class="col-lg-4 col-md-12">
+                            
+                        </div>
+                        <!-- Header Top Right End -->
+                    </div>
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Header Top End -->
+            <!-- Header Bottom Start -->
+            <div class="header-bottom header-sticky">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-3 col-lg-2 col-sm-5 col-5">
+                            <div class="logo">
+                                <a href="/"><img src="/img/logo/logo.png" alt="logo-image" width="138px" title="Trang chủ"></a>
+                            </div>
+                        </div>
+                        <!-- Primary Vertical-Menu End -->
+                        <!-- Search Box Start -->
+                        {{> main_menu}}
+                        <!-- Search Box End -->
+                        <!-- Cartt Box Start -->
+                        <div class="col-lg-3 col-sm-7 col-7">
+                            <div class="cart-box text-right">
+                                <ul>
+                                    <li><a href="compare.html"><i class="fa fa-cog"></i></a>
+                                        <ul class="ht-dropdown">
+                                            <li><a href="login.html">Login</a></li>
+                                            <li><a href="register.html">Register</a></li>
+                                            <li><a href="account.html">Account</a></li>                                            
+                                        </ul>
+                                    </li>                                    
+                                    <li><a href="wishlist.html"><i class="fa fa-heart-o"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-basket"></i><span class="cart-counter">2</span></a>
+                                        <ul class="ht-dropdown main-cart-box">
+                                            <li>
+                                                <!-- Cart Box Start -->
+                                                <div class="single-cart-box">
+                                                    <div class="cart-img">
+                                                        <a href="#"><img src="/img/menu/1.jpg" alt="cart-image"></a>
+                                                    </div>
+                                                    <div class="cart-content">
+                                                        <h6><a href="product.html">Products Name</a></h6>
+                                                        <span>1 × $399.00</span>
+                                                    </div>
+                                                    <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
+                                                </div>
+                                                <!-- Cart Box End -->
+                                                <!-- Cart Box Start -->
+                                                <div class="single-cart-box">
+                                                    <div class="cart-img">
+                                                        <a href="#"><img src="/img/menu/2.jpg" alt="cart-image"></a>
+                                                    </div>
+                                                    <div class="cart-content">
+                                                        <h6><a href="/products/1">Products Name</a></h6>
+                                                        <span>2 × $299.00</span>
+                                                    </div>
+                                                    <a class="del-icone" href="#"><i class="fa fa-window-close-o"></i></a>
+                                                </div>
+                                                <!-- Cart Box End -->
+                                                <!-- Cart Footer Inner Start -->
+                                                <div class="cart-footer fix">
+                                                    <h5>total :<span class="f-right">$698.00</span></h5>
+                                                    <div class="cart-actions">
+                                                        <a class="checkout" href="checkout.html">Checkout</a>
+                                                    </div>
+                                                </div>
+                                                <!-- Cart Footer Inner End -->
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Cartt Box End -->
+                        {{> mobile_menu }}
+                        <!-- Mobile Menu  End -->                        
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Header Bottom End -->
+        </header>

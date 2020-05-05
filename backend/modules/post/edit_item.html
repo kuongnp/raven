@@ -1,0 +1,97 @@
+{{!< layout/default}}
+{{! The tag above means - insert everything within this file into the {content} of the default.html template }}
+
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+	<!-- BEGIN: Subheader -->
+	<div class="m-subheader ">
+		<div class="d-flex align-items-center">
+			{{> breadcrumb}}
+		</div>
+	</div>
+	<!-- END: Subheader -->
+	<div class="m-content">
+		<div class="row">
+			<div class="col-md">
+			    <!--begin::Form-->
+				<form action="/menu/item/{{menu._id}}" method="post" class="m-form m-form--fit m-form--label-align-right" autocomplete="off">
+    			    <div class="m-portlet m-portlet--tab">
+    					<div class="m-portlet__body">
+    							<div class="form-group m-form__group">
+    								<label for="title">
+    									Item name
+    								</label>
+    								<input type="text" class="form-control m-input" id="name" value="{{menu.name}}" name="name" placeholder="Item name" required>
+    								<span class="m-form__help">
+    									Name of tem
+    								</span>
+    							</div>
+    							<div class="form-group m-form__group">
+    								<label for="title">
+    									Link
+    								</label>
+    								<input type="text" class="form-control m-input" id="link" value="{{menu.link}}" name="link" placeholder="Item link">
+    								<span class="m-form__help">
+    									Link of item
+    								</span>
+    							</div>
+    						</div>
+    					<div class="m-portlet__head">
+    						<div class="m-portlet__head-caption">
+    							<div class="m-portlet__head-title">
+    								<h3 class="m-portlet__head-text">
+    									Sub items
+    								</h3>
+    							</div>
+    						</div>
+    						<div class="m-portlet__head-tools">
+								<ul class="m-portlet__nav">
+									<li class="m-portlet__nav-item">
+										<button type="button" class="btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill" id="add_menu_item">
+											<i class="la la-plus"></i>
+										</button>
+									</li>
+								</ul>
+							</div>
+    					</div>
+    					<div class="m-portlet__body" id="list_item">
+    					    {{#each menu.sub}}
+    						<div class="form-group m-form__group row">
+    							<input type="hidden" name="item_id" value="{{this._id}}">
+    							<div>
+									<button type="button" class="btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill drag_item">
+										<i class="la la-arrows"></i>
+									</button>
+								</div>
+    							<div class="col-lg-3">
+									<input type="text" class="form-control m-input" value="{{this.name}}" name="item_name" placeholder="Item name">
+								</div>
+    							<div class="col-lg-3">
+									<input type="text" class="form-control m-input" value="{{this.link}}" name="item_link" placeholder="Item link">
+								</div>
+								<div class="col-lg-3">
+									<button type="button" class="btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill remove_item">
+										<i class="la la-remove"></i>
+									</button>
+								</div>
+    						</div>
+    						{{/each}}
+    					</div>
+    					<div class="m-portlet__foot m-portlet__foot--fit">
+    						<div class="m-form__actions">
+    							<button type="submit" class="btn btn-primary">
+    								Submit
+    							</button>
+    							<a href="/menu">
+	    							<button type="button" class="btn btn-secondary">
+	    								Cancel
+	    							</button>
+    							</a>
+    						</div>
+    					</div>
+    				</div>
+    			</form>
+    			<!--end::Form-->
+			</div>
+		</div>
+	</div>
+</div>

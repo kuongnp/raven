@@ -1,0 +1,24 @@
+<h2 class="section-title"><span><i class="icon-paper-plane"></i>DROP ME A LINE</span></h2>
+<!-- .contact-form -->
+<div class="contact-form">
+      <form id="contact-form" action="send-mail.php" method="post">
+        <!-- enter mail subject here -->
+        <input type="hidden" name="subject" id="subject" value="You have a new message from cvCard!">
+        <p>
+          <label for="name">NAME</label>
+          <input type="text" name="name" id="name" class="required">
+        </p>
+        <p>
+          <label for="email">EMAIL</label>
+          <input type="text" name="email" id="email" class="required email">
+        </p>
+        <p>
+          <label for="message">MESSAGE</label>
+          <textarea name="message" id="message" class="required"></textarea>
+        </p>
+        <p>
+          <input type="submit" class="submit button primary" value="SEND">
+        </p>
+      </form>
+  </div>
+<!-- .contact-form -->

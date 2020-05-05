@@ -1,0 +1,23 @@
+<ul class="ht-dropdown dropdown-style-two sub-menu">
+    {{#each this.sub}}
+        {{#if this.sub }}
+            {{#if this.link}}
+                <li>
+                    <a href="{{this.link}}">{{this.name}}<i class="fa fa-angle-down"></i></a>
+                    {{>sub_item}}    
+                </li>
+            {{else}}
+                <li>
+                    <a href="#">{{this.name}}<i class="fa fa-angle-down"></i></a>
+                    {{>sub_item}}    
+                </li>
+            {{/if}}
+        {{else}}
+            {{#if this.link}}
+		        <li><a href="{{this.link}}">{{this.name}}</a></li>
+		     {{else}}
+		         <li><a href="#">{{this.name}}</a></li>
+		     {{/if}}
+		{{/if}}
+    {{/each}}
+</ul>

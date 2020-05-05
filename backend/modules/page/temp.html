@@ -1,0 +1,46 @@
+<table class="table">
+													<thead>
+														<tr>
+															<th>
+																#
+															</th>
+															<th>
+																Name
+															</th>
+															<th>
+																Slug
+															</th>
+															<th>
+																Items
+															</th>
+															<th>
+																Action
+															</th>
+														</tr>
+													</thead>
+													<tbody>
+														{{#each menus}}
+														<tr id="{{this._id}}">
+															<th scope="row">
+																{{counter @index}}
+															</th>
+															<td>
+																<a href="/menu/{{this._id}}">{{this.name}}</a>
+															</td>
+															<td>
+																{{this.slug}}
+															</td>
+															<td>
+																{{#each this.items}}
+																	{{this.name}},
+																{{/each}}
+															</td>
+															<td>
+																<a href="#" class="btn btn-primary m-btn m-btn--icon m-btn--icon-only del_menu" data-id = "{{this._id}}">
+																	<i class="la la-trash"></i>
+																</a>
+															</td>
+														</tr>
+														{{/each}}
+													</tbody>
+												</table>

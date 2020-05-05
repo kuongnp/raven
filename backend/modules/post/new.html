@@ -1,0 +1,115 @@
+{{!< layout/default}}
+{{! The tag above means - insert everything within this file into the {content} of the default.html template }}
+
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+	<!-- BEGIN: Subheader -->
+	<div class="m-subheader ">
+		<div class="d-flex align-items-center">
+			{{> breadcrumb}}
+		</div>
+	</div>
+	<!-- END: Subheader -->
+	<div class="m-content">
+		<div class="row">
+			<div class="col-md">
+			    <!--begin::Form-->
+				<form action="/menu" method="post" class="m-form m-form--fit m-form--label-align-right" autocomplete="off">
+    			    <div class="m-portlet m-portlet--tab">
+    			    	<div class="m-portlet__head">
+    						<div class="m-portlet__head-tools">
+								<ul class="m-portlet__nav">
+									<li class="m-portlet__nav-item">
+										<button type="button" class="btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill m-dropdown__toggle">
+											<i class="la la-cog"></i>
+										</button>
+										
+										
+										
+									</li>
+									<li id="m_quick_sidebar_toggle" class="m-nav__item">
+											<a href="#" class="m-nav__link m-dropdown__toggle">
+												<span class="m-nav__link-icon">
+													<i class="flaticon-grid-menu"></i>
+												</span>
+											</a>
+										</li>
+								</ul>
+							</div>
+    					</div>
+    					<div class="m-portlet__body">
+    							<div class="form-group m-form__group">
+    								<label for="title">
+    									Title
+    								</label>
+    								<input type="text" class="form-control m-input" id="title" name="title" placeholder="Post title" required>
+    							</div>
+    							<div class="form-group m-form__group">
+    								<label for="slug">
+    									Slug
+    								</label>
+    								<input type="text" class="form-control m-input" id="slug" name="slug" placeholder="Post slug" required>
+    							</div>
+    							<div class="form-group m-form__group">
+    								<label for="excerpt">
+    									Excerpt
+    								</label>
+    								<input type="text" class="form-control m-input" id="excerpt" name="excerpt" placeholder="Post excerpt" required>
+    							</div>
+    							<div class="form-group m-form__group">
+    								<label for="content">
+    									Content
+    								</label>
+    								<input type="text" class="form-control m-input" id="content" name="content" placeholder="Post content" required>
+    							</div>
+    							
+    						</div>
+    					
+    					<div class="modal fade" id="m_modal_1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: none;" aria-hidden="true">
+							<div class="modal-dialog" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalLabel">
+											Modal title
+										</h5>
+										<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+											<span aria-hidden="true">
+												×
+											</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<p>
+											Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+										</p>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-secondary" data-dismiss="modal">
+											Close
+										</button>
+										<button type="button" class="btn btn-primary">
+											Save changes
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+    				
+    					<div class="m-portlet__foot m-portlet__foot--fit">
+    						<div class="m-form__actions">
+    							<button type="submit" class="btn btn-primary">
+    								Submit
+    							</button>
+    							<a href="/post">
+	    							<button type="button" class="btn btn-secondary">
+	    								Cancel
+	    							</button>
+    							</a>
+    						</div>
+    					</div>
+    				</div>
+    			</form>
+    			<!--end::Form-->
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,76 @@
+<div id="item_{{this._id}}" class="m-portlet m-portlet--mobile">
+	<div class="m-portlet__head">
+		<div class="m-portlet__head-caption">
+			<div class="m-portlet__head-title">
+				<h3 class="m-portlet__head-text">
+					{{{ ParentPath }}}
+				</h3>
+			</div>
+		</div>
+		<div class="m-portlet__head-tools">
+			<ul class="m-portlet__nav">
+				<li class="m-portlet__nav-item">
+					<a href="/menu/item/{{this._id}}" class="m-portlet__nav-link btn btn-secondary m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill" data-id = "{{this._id}}">
+						<i class="la la-edit"></i>
+					</a>
+				</li>
+				<li class="m-portlet__nav-item">
+					<a href="#" class="m-portlet__nav-link btn btn-secondary m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill del_item" data-id = "{{this._id}}">
+						<i class="la la-trash"></i>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="m-portlet__body">
+		<div class="m-demo__preview">
+			<ul class="m-nav">
+				{{#each this.sub}}
+				<li id="item_{{this._id}}" class="m-nav__item">
+					<span class="m-nav__link">
+						<i class="m-nav__link-icon la la-arrows"></i>
+						<span class="m-nav__link-title">
+							<span class="m-nav__link-wrap">
+								<span class="m-nav__link-text">
+									{{this.name}}
+								</span>
+							</span>
+						</span>
+						<span class="m-nav__link-title">
+							<span class="m-nav__link-wrap">
+								<span class="m-nav__link-text">
+									{{this.link}}
+								</span>
+							</span>
+						</span>
+						<span class="m-nav__link-title">
+							<span class="m-nav__link-wrap">
+								<span class="m-nav__link-text">
+									
+								</span>
+								<span class="m-nav__link-badge">
+									<a href="/menu/item/{{this._id}}" class="m-portlet__nav-link btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill" data-id = "{{this._id}}">
+										<i class="la la-edit"></i>
+									</a>
+								</span>
+								<span class="m-nav__link-badge">
+									<a href="#" class="m-portlet__nav-link btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill del_item" data-id = "{{this._id}}">
+										<i class="la la-trash"></i>
+									</a>
+								</span>
+							</span>
+						</span>
+						
+					</span>
+				</li>
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</div>
+{{#each this.sub}}
+	{{#if this.sub }}
+		
+		{{> item ParentPath =  (join ../ParentPath '<i class="la la-angle-double-right"></i>' this.name )  }}
+	{{/if}}
+{{/each}}

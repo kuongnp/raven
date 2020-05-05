@@ -1,0 +1,15 @@
+<div class="col-sm-12 d-lg-none">
+    <div class="mobile-menu">
+        <nav>
+            <ul>
+                {{#each site.main_menu }}
+                    {{#if this.link}}
+                        <li><a href="{{this.link}}">{{this.name}}</a></li>
+                    {{else}}
+                        <li><a href="#">{{this.name}}</a></li>
+                    {{/if}}
+                {{/each}}
+            </ul>
+        </nav>
+    </div>
+</div>

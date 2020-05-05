@@ -1,0 +1,158 @@
+{{!< layout/default}}
+{{! The tag above means - insert everything within this file into the {content} of the default.html template }}
+
+<div class="m-grid__item m-grid__item--fluid m-wrapper">
+	<!-- BEGIN: Subheader -->
+	<div class="m-subheader ">
+		<div class="d-flex align-items-center">
+			{{> breadcrumb}}
+		</div>
+	</div>
+	<!-- END: Subheader -->
+	<div class="m-content">
+		<!--<div class="row">
+			<div class="col-md">
+				<div class="m-portlet">
+					<div class="m-portlet__head">
+						<div class="m-portlet__head-caption">
+							<div class="m-portlet__head-title">
+								<span class="m-portlet__head-icon m--hide">
+									<i class="la la-gear"></i>
+								</span>
+								<h3 class="m-portlet__head-text">
+									Set menu
+								</h3>
+							</div>
+						</div>
+					</div>
+						<div class="m-portlet__body">
+							<ul class="m-nav">
+								{{#each nav}}
+									<li id="nav_{{this._id}}" class="m-nav__item">{{this.title}}</li>
+								{{/each}}
+							</ul>
+						</div>
+				</div>
+			</div>
+		</div>-->
+		<div class="row">
+			<div class="col-md">
+				<div class="m-portlet m-portlet--tab">
+    					<div class="m-portlet__head">
+    						<div class="m-portlet__head-caption">
+    							<div class="m-portlet__head-title">
+    								<span class="m-portlet__head-icon m--hide">
+    									<i class="la la-gear"></i>
+    								</span>
+    								<h3 class="m-portlet__head-text">
+    									List post
+    								</h3>
+    							</div>
+    						</div>
+    						<div class="m-portlet__head-tools">
+								<ul class="m-portlet__nav">
+									<li class="m-portlet__nav-item">
+										<a href="/post/new" class="m-portlet__nav-link btn btn-secondary m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill">
+											<i class="la la-plus"></i>
+										</a>
+									</li>
+									
+									
+								</ul>
+							</div>
+    					</div>
+    					<div class="m-portlet__body">
+    						<div class="m-section">
+								<span class="m-section__sub">
+									List menu can inject in all route.
+								</span>
+								<div class="m-section__content">
+									{{#each menus}}
+										<div id="menu_{{this._id}}" class="m-portlet m-portlet--mobile">
+											<div class="m-portlet__head  bg-secondary">
+												<div class="m-portlet__head-caption">
+													<div class="m-portlet__head-title">
+														<h3 class="m-portlet__head-text">
+															{{this.name}}
+														</h3>
+													</div>
+												</div>
+												<div class="m-portlet__head-tools">
+													<ul class="m-portlet__nav">
+														<li class="m-portlet__nav-item">
+															<a href="/menu/{{this._id}}" class="m-portlet__nav-link btn btn-secondary m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill" data-id = "{{this._id}}">
+																<i class="la la-edit"></i>
+															</a>
+														</li>
+														<li class="m-portlet__nav-item">
+															<a href="#" class="m-portlet__nav-link btn btn-secondary m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill del_menu" data-id = "{{this._id}}">
+																<i class="la la-trash"></i>
+															</a>
+														</li>
+													</ul>
+												</div>
+											</div>
+											<div class="m-portlet__body">
+												<div class="m-demo__preview">
+													<ul class="m-nav">
+														{{#each this.items}}
+														<li id="item_{{this._id}}" class="m-nav__item">
+															<span class="m-nav__link">
+																<i class="m-nav__link-icon la la-arrows"></i>
+																<span class="m-nav__link-title">
+																	<span class="m-nav__link-wrap">
+																		<span class="m-nav__link-text">
+																			{{this.name}}
+																		</span>
+																	</span>
+																</span>
+																<span class="m-nav__link-title">
+																	<span class="m-nav__link-wrap">
+																		<span class="m-nav__link-text">
+																			{{this.link}}
+																		</span>
+																	</span>
+																</span>
+																<span class="m-nav__link-title">
+																	<span class="m-nav__link-wrap">
+																		<span class="m-nav__link-text">
+																			
+																		</span>
+																		<span class="m-nav__link-badge">
+																			<a href="/menu/item/{{this._id}}" class="m-portlet__nav-link btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill" data-id = "{{this._id}}">
+																				<i class="la la-edit"></i>
+																			</a>
+																		</span>
+																		<span class="m-nav__link-badge">
+																			<a href="#" class="m-portlet__nav-link btn btn-secondary btn-sm m-btn m-btn--air m-btn--icon m-btn--icon-only m-btn--pill del_item" data-id = "{{this._id}}">
+																				<i class="la la-trash"></i>
+																			</a>
+																		</span>
+																	</span>
+																</span>
+																	
+															</span>
+														</li>
+														{{/each}}
+													</ul>
+												</div>
+											</div>
+										</div>
+										{{#each this.items}}
+											
+											{{#if this.sub }}
+												{{>item ParentPath = (join ../this.name  '<i class="la la-angle-double-right"></i>'  this.name) }}
+											{{/if}}
+										{{/each}}
+									{{/each}}
+									
+									
+								</div>
+							</div>
+    					</div>
+    			</div>
+			</div>
+		</div>
+		
+	</div>
+</div>

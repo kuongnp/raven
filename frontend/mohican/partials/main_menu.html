@@ -1,0 +1,73 @@
+<div class="col-xl-6 col-lg-7 d-none d-lg-block">
+    <div class="middle-menu pull-right">
+        <nav>
+            <ul class="middle-menu-list">
+                {{#each site.main_menu }}
+                        {{#if this.sub }}
+                            {{#if this.link}}
+                                <li>
+                                    <a href="{{this.link}}">{{this.name}}<i class="fa fa-angle-down"></i></a>
+                                    <ul class="ht-dropdown dropdown-style-two">
+                                        {{#each this.sub}}
+                                            {{#if this.sub }}
+                                                {{#if this.link}}
+                                                    <li>
+                                                        <a href="{{this.link}}">{{this.name}}<i class="fa fa-angle-down"></i></a>
+                                                        {{>sub_item}}    
+                                                    </li>
+                                                {{else}}
+                                                    <li>
+                                                        <a href="#">{{this.name}}<i class="fa fa-angle-down"></i></a>
+                                                        {{>sub_item}}    
+                                                    </li>
+                                                {{/if}}
+                                            {{else}}
+                                                {{#if this.link}}
+                                    		        <li><a href="{{this.link}}">{{this.name}}</a></li>
+                                    		     {{else}}
+                                    		         <li><a href="#">{{this.name}}</a></li>
+                                    		     {{/if}}
+                                    		{{/if}}
+                                        {{/each}}
+                                    </ul>    
+                                </li>
+                            {{else}}
+                                <li>
+                                    <a href="#">{{this.name}}<i class="fa fa-angle-down"></i></a>
+                                    <ul class="ht-dropdown dropdown-style-two">
+                                        {{#each this.sub}}
+                                            {{#if this.sub }}
+                                                {{#if this.link}}
+                                                    <li>
+                                                        <a href="{{this.link}}">{{this.name}}<i class="fa fa-angle-down"></i></a>
+                                                        {{>sub_item}}    
+                                                    </li>
+                                                {{else}}
+                                                    <li>
+                                                        <a href="#">{{this.name}}<i class="fa fa-angle-down"></i></a>
+                                                        {{>sub_item}}    
+                                                    </li>
+                                                {{/if}}
+                                            {{else}}
+                                                {{#if this.link}}
+                                    		        <li><a href="{{this.link}}">{{this.name}}</a></li>
+                                    		     {{else}}
+                                    		         <li><a href="#">{{this.name}}</a></li>
+                                    		     {{/if}}
+                                    		{{/if}}
+                                        {{/each}}
+                                    </ul>    
+                                </li>
+                            {{/if}}
+                        {{else}}
+                            {{#if this.link}}
+						        <li><a href="{{this.link}}">{{this.name}}</a></li>
+						     {{else}}
+						         <li><a href="#">{{this.name}}</a></li>
+						     {{/if}}
+						{{/if}}
+                {{/each}}
+            </ul>
+        </nav>
+    </div>
+</div>

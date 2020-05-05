@@ -1,0 +1,19 @@
+{{#each site.footer_menu }}
+    <div class="col-lg-2  col-md-5 col-sm-6 footer-full">
+        <div class="single-footer">
+            <h3 class="footer-title">{{this.name}}</h3>
+            <div class="footer-content">
+                <ul class="footer-list">
+                    {{#each this.sub}}
+                        {{#if this.link}}
+                            <li><a href="{{this.link}}">{{this.name}}</a></li>
+                        {{else}}
+                            <li><a href="#">{{this.name}}</a></li>
+                        {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+{{/each}}
+   

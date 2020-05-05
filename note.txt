@@ -1,0 +1,48 @@
+https://hackernoon.com/tutorial-creating-and-managing-a-node-js-server-on-aws-part-1-d67367ac5171
+https://hackernoon.com/tutorial-creating-and-managing-a-node-js-server-on-aws-part-2-5fbdea95f8a1
+https://addyosmani.com/resources/essentialjsdesignpatterns/book/#modulepatternjavascript
+https://medium.com/dev-bits/everything-i-know-about-writing-modular-javascript-applications-37c125d8eddf
+
+redirect port: sudo iptables -A PREROUTING -t nat -i eth0 -p tcp --dport 443 -j REDIRECT --to-port 8443
+
+https://www.cronj.com/blog/https-node-js-aws-ec2-node-js/
+https://demo.xtemos.com/basel/
+https://nullforest.com
+https://community.c9.io/t/setting-up-mongodb/1717
+https://www.ghostforbeginners.com/themes/
+https://hapihour.slack.com/messages/C6CEEUE06/
+https://github.com/mtharrison/hapi.js-in-action
+https://zordius.github.io/HandlebarsCookbook/
+https://github.com/mtharrison/hapi-context-credentials
+https://demo.hasthemes.com/jantrik-v2/jantrik-html-tf.html
+http://themes.pixelwars.org/cvcard/index.html
+https://github.com/arrilot/laravel-widgets
+https://atom.io/
+
+ {
+                    plugin: {
+                        register: 'good',
+                        options: {
+                            reporters: {
+                                console: [{
+                                    module: 'good-squeeze',
+                                    name: 'Squeeze',
+                                    args: [{
+                                        response: '*',
+                                        log: '*'
+                                    }]
+                                }, {
+                                    module: 'good-console'
+                                }, 'stdout']
+                            }
+                        }
+                    }
+                },
+                
+                
+                
+https://devcenter.heroku.com/articles/mean-apps-restful-api
+//widgets system
+1. define page containt widget: page_code
+2. 
+https://dev.to/alex_barashkov/using-docker-for-nodejs-in-development-and-production-3cgp
